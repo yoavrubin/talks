@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="578" height="550"></canvas>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+      var x = canvas.width / 2;
+      var y = canvas.height / 2;
+      var radius = 195;
+      var startAngle = 0* Math.PI;
+      var endAngle = (2/3) * Math.PI;
+      var counterClockwise = false;
+ 	  context.lineWidth = 15;
+      
+      var startAngle1 = (2/3)* Math.PI;
+      var endAngle1 = (4/3) * Math.PI;
+      
+      
+      var startAngle2 = (4/3)* Math.PI;
+      var endAngle2 = (0/3) * Math.PI;
+      
+      context.beginPath();
+      context.strokeStyle = 'rgb(' + 255 + ', ' + 0 + ', ' + 0 + ')';
+      context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+      context.stroke();
+      
+      context.beginPath();
+      context.strokeStyle = 'rgb(' + 0 + ', ' + 255 + ', ' + 0 + ')';
+      context.arc(x, y, radius, startAngle1, endAngle1, counterClockwise);
+      context.stroke();
+     
+      context.beginPath();
+      context.strokeStyle = 'rgb(' + 0 + ', ' + 0 + ', ' + 255 + ')';
+      context.arc(x, y, radius, startAngle2, endAngle2, counterClockwise);
+      context.stroke();
+      
+      
+      // line color
+     
+    </script>
+  </body>
+</html>
