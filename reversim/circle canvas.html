@@ -16,11 +16,22 @@
       var x = canvas.width / 2;
       var y = canvas.height / 2;
       var radius = 195;
-      var startAngle = 0* Math.PI;
-      var endAngle = (2/3) * Math.PI;
-      var counterClockwise = false;
- 	  context.lineWidth = 15;
-      
+	  var colors = ['red','blue', 'green', 'yellow','silver', 'brown'];
+	  var numColorsWanted = 3;
+	  var step = 2/numColorsWanted;
+	  for(var i=0,l = numColorsWanted;i<l;i++){
+		var startAngle = i*step* Math.PI;
+		var endAngle = (i+1)*step* Math.PI;
+		var counterClockwise = false;
+		context.lineWidth = 15;	 
+		context.beginPath();
+		context.strokeStyle = colors[i];//'rgb(' + 255 + ', ' + 0 + ', ' + 0 + ')';
+		context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+		context.stroke();
+	  }
+	  
+ 
+      /*
       var startAngle1 = (2/3)* Math.PI;
       var endAngle1 = (4/3) * Math.PI;
       
@@ -28,10 +39,6 @@
       var startAngle2 = (4/3)* Math.PI;
       var endAngle2 = (0/3) * Math.PI;
       
-      context.beginPath();
-      context.strokeStyle = 'rgb(' + 255 + ', ' + 0 + ', ' + 0 + ')';
-      context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
-      context.stroke();
       
       context.beginPath();
       context.strokeStyle = 'rgb(' + 0 + ', ' + 255 + ', ' + 0 + ')';
@@ -42,7 +49,7 @@
       context.strokeStyle = 'rgb(' + 0 + ', ' + 0 + ', ' + 255 + ')';
       context.arc(x, y, radius, startAngle2, endAngle2, counterClockwise);
       context.stroke();
-      
+      */
       
       // line color
      
